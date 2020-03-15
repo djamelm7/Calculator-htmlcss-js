@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<!-- Code by Djamel Neguez -->
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+    body {
+      background: linear-gradient(to right, #44a08d, #093637);
+    }
+
+    /* Code by Djamel Neguez*/
+    .Calculator {
+      width: 300px;
+      height: 450px;
+      position: absolute;
+      left: 50%;
+      top: 40%;
+      background: linear-gradient(to top, #2C5364, #203A43, #0F2027);
+      border-radius: 7px;
+      transform: translate(-50%, -50%);
+      box-shadow: 0px 4px 4px 4px #182C61;
+    }
+
+    .in {
+      display: block;
+      width: 100px;
+      margin: 5px;
+      margin-left: 35px;
+    }
+
+    .in input {
+      padding: 15px 10px 12px 10px;
+      border: none;
+      font-weight: bold;
+      font-size: 17px;
+      margin-top: 65px;
+      border-radius: 2px;
+      background: #F8EFBA;
+    }
+
+    .btn {
+      font-size: 12px;
+      margin-left: 60px;
+      margin-top: 25px;
+      width: 200px;
+    }
+
+    .btn button {
+      display: inline;
+      padding: 18px;
+      margin: 2px;
+      border: none;
+      cursor: pointer;
+      background: #29323c;
+      color: #f2fcfe;
+      border-radius: 50% 0;
+    }
+
+    .btn button:hover {
+      background: #ffffff;
+      color: black;
+      font-weight: bold;
+    }
+
+    .btn1 {
+      display: inline;
+    }
+
+    .btn0 button {
+      background: linear-gradient(to right, #000428, #004e92);
+    }
+
+    .btn .o1 {
+      background: linear-gradient(to right, #000428, #004e92);
+    }
+
+    .btn .o1:hover {
+      background: #ffffff;
+    }
+
+    /* Code by Djamel Neguez*/
+    .btn2 {
+      display: block;
+    }
+
+    .btn3 {
+      display: block;
+    }
+
+    #bu {
+      background: linear-gradient(to top, #141e30, #243b55);
+      border: none;
+      color: #ffff;
+      border-radius: 50%;
+      font-size: 18px;
+      font-weight: bold;
+      top: 5px;
+      position: relative;
+      float: right;
+      right: 5px;
+      cursor: pointer;
+      padding: 4px 10px 4px 10px;
+    }
+
+    #bu:hover {
+      background: black;
+      color: white;
+      box-shadow: 0px 0px 4px 4px #000C40;
+    }
+
+    #bw {
+      background: linear-gradient(to top, #141e30, #243b55);
+      border: none;
+      color: #ffff;
+      border-radius: 50%;
+      font-size: 18px;
+      font-weight: bold;
+      top: 5px;
+      position: relative;
+      float: right;
+      right: 5px;
+      cursor: pointer;
+      padding: 3px 10px 4px 10px;
+      margin-right: 4px;
+    }
+
+    #bw:hover {
+      background: white;
+      color: black;
+      box-shadow: 0px 0px 3px 3px #F8FFAE;
+    }
+  </style>
+  <script type="text/javascript">
+    function c(val) {
+      document.getElementById("d").value = val;
+    }
+
+    function math(val) {
+      document.getElementById("d").value += val;
+    }
+
+    function calcu() {
+      c(eval(document.getElementById("d").value));
+    }
+
+    function dark() {
+      document.getElementById('id1').style.background = 'black';
+      document.getElementById('d').style.background = '#2C3A47';
+      document.getElementById('d').style.color = '#ffff';
+      document.getElementById('r').style.background = '#0F2027';
+      document.getElementById('r1').style.background = '#0F2027';
+      document.getElementById('r2').style.background = '#0F2027';
+      document.getElementById('r3').style.background = '#0F2027';
+      document.getElementById('r4').style.background = '#0F2027';
+      document.getElementById('o').style.background = '#0F2027';
+
+      /* Code by Djamel Neguez*/
+    }
+    //function to refresh and reload the page ... back to light mode
+    function refresh() {
+      setTimeout(function() {
+        location.reload()
+      }, 100); /* Code by Djamel Neguez*/
+
+    }
+  </script>
+</head>
+
+<body>
+  <div class="Calculator" id="id1">
+    <div class="bd">
+      <button type="button" name="dark-mode" id="bu" onclick="dark();"> - </button>
+      <button type="button" name="dark-mode" id="bw" onclick="refresh();"> ι </button>
+    </div>
+    <div class="in">
+      <input type="text" placeholder="0" id="d">
+    </div>
+    <div class="btn">
+      <div class="btn0">
+        <button type="button" name="button" id="r" onclick='math("(")'>(</button>
+        <button type="button" name="button" id="r1" onclick='math(")")'>)</button>
+        <button type="button" name="button" id="r2" onclick='math("%")'>%</button>
+        <button type="button" name="button" id="r3" onclick='math("/")'>/</button>
+      </div>
+      <div class="btn1">
+        <button type="button" name="button" onclick='math("9")'>9</button>
+        <button type="button" name="button" onclick='math("8")'>8</button>
+        <button type="button" name="button" onclick='math("7")'>7</button>
+        <button type="button" name="button" class="o1" id="r" onclick='math("*")'>x</button>
+      </div>
+      <div class="btn2">
+        <button type="button" name="button" onclick='math("6")'>6</button>
+        <button type="button" name="button" onclick='math("5")'>5</button>
+        <button type="button" name="button" onclick='math("4")'>4</button>
+        <button type="button" name="button" class="o1" id="o" onclick='math("-")'>-</button>
+      </div>
+      <div class="btn3">
+        <button type="button" name="button" onclick='math("3")'>3</button>
+        <button type="button" name="button" onclick='math("2")'>2</button>
+        <button type="button" name="button" onclick='math("1")'>1</button>
+        <button type="button" name="button" class="o1" id="o" onclick='math("+")'>+</button>
+      </div>
+      <div class="btn4">
+        <button type="button" name="button" onclick='math(".")'>.</button>
+        <button type="button" name="button" onclick='math("0")'>0</button>
+        <button type="button" name="button" onclick='c("");test()'>C</button>
+        <button type="button" name="button" class="o1" id="o" onclick='calcu();'>=</button>
+      </div>
+    </div>
+  </div>
+</body>
+<!--   /* Code by Djamel Neguez*/  -->
+</html>
